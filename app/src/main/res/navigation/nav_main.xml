@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="uz.hamroev.smartland.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_avtomatikFragment"
+            app:destination="@id/avtomatikFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_agrotexnikaFragment"
+            app:destination="@id/agrotexnikaFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_daromadFragment"
+            app:destination="@id/daromadFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mualliflarFragment"
+            app:destination="@id/mualliflarFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agrotexnikaFragment"
+        android:name="uz.hamroev.smartland.fragment.section.AgrotexnikaFragment"
+        android:label="fragment_agrotexnika"
+        tools:layout="@layout/fragment_agrotexnika" />
+    <fragment
+        android:id="@+id/avtomatikFragment"
+        android:name="uz.hamroev.smartland.fragment.section.AvtomatikFragment"
+        android:label="fragment_avtomatik"
+        tools:layout="@layout/fragment_avtomatik" >
+        <action
+            android:id="@+id/action_avtomatikFragment_to_avtomaticSolveFragment"
+            app:destination="@id/avtomaticSolveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/daromadFragment"
+        android:name="uz.hamroev.smartland.fragment.section.DaromadFragment"
+        android:label="fragment_daromad"
+        tools:layout="@layout/fragment_daromad" />
+    <fragment
+        android:id="@+id/mualliflarFragment"
+        android:name="uz.hamroev.smartland.fragment.section.MualliflarFragment"
+        android:label="fragment_mualliflar"
+        tools:layout="@layout/fragment_mualliflar" />
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="uz.hamroev.smartland.fragment.weather.WeatherFragment"
+        android:label="fragment_weather"
+        tools:layout="@layout/fragment_weather" />
+    <fragment
+        android:id="@+id/avtomaticSolveFragment"
+        android:name="uz.hamroev.smartland.fragment.section.avtomatic.AvtomaticSolveFragment"
+        android:label="fragment_avtomatic_solve"
+        tools:layout="@layout/fragment_avtomatic_solve" >
+        <action
+            android:id="@+id/action_avtomaticSolveFragment_to_avtomaticCalculateFragment"
+            app:destination="@id/avtomaticCalculateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/avtomaticCalculateFragment"
+        android:name="uz.hamroev.smartland.fragment.section.avtomatic.AvtomaticCalculateFragment"
+        android:label="fragment_avtomatic_calculate"
+        tools:layout="@layout/fragment_avtomatic_calculate" />
+</navigation>

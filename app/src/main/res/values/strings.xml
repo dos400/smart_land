@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Smart land</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="theme1">Automatic placement of crops</string>
+    <string name="theme2">Agrotechnics of crops grown on the homestead land area</string>
+    <string name="theme3">Income and Expense</string>
+    <string name="mualliflar">Authors</string>
+    <string name="title">Smart\nLand</string>
+
+    <!--    Languages-->
+    <string name="language_rus">Russian</string>
+    <string name="language_eng">English</string>
+    <string name="language_uzb">Uzbek</string>
+
+    <!--    Seasons-->
+    <string name="spring">Spring</string>
+    <string name="autumn">Autumn</string>
+
+    <!--    spring products-->
+    <string name="potatoes">Potatoes</string>
+    <string name="carrot">Carrot</string>
+    <string name="tomato">Tomato</string>
+    <string name="onion">Onion</string>
+    <string name="cucumber">Cucumber</string>
+    <string name="eggplant">Eggplant</string>
+    <string name="Pepper">Pepper (spice and others)</string>
+    <string name="bean">Bean</string>
+
+    <!--    autumn products-->
+    <string name="onion_autumn">Onion</string>
+    <string name="garlic">Garlic</string>
+    <string name="turnip">Turnip</string>
+    <string name="radish">Radish</string>
+    <string name="spinach">Spinach</string>
+    <string name="cilantro">Cilantro</string>
+    <string name="dill">Dill</string>
+
+</resources>

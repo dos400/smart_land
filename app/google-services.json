@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "161995733985",
+    "project_id": "smart-land-e0fdc",
+    "storage_bucket": "smart-land-e0fdc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161995733985:android:03d712ba4326f02268f0a0",
+        "android_client_info": {
+          "package_name": "uz.hamroev.smartland"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161995733985-abbej3caancll9p28pivgpp0v1931bkg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT0XN_FbfW9_NpO2tv-Yc-dZsE2PcTrOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161995733985-abbej3caancll9p28pivgpp0v1931bkg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

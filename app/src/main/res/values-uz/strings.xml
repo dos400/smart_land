@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart land</string>
+    <string name="hello_blank_fragment">Mualliflar</string>
+    <string name="theme1">Ekinlarni avtomatik joylashtirish</string>
+    <string name="theme2">Tomorqa yer maydonida yetishtiriladigan ekinlar agrotexnikasi</string>
+    <string name="theme3">Daromad va Xarajat</string>
+    <string name="mualliflar">Mualliflar</string>
+
+    <string name="title">Smart\nLand</string>
+
+    <!--    Languages-->
+    <string name="language_rus">Русский</string>
+    <string name="language_eng">English</string>
+    <string name="language_uzb">O\'zbek</string>
+
+    <!--    Seasons-->
+    <string name="spring">Bahorgi</string>
+    <string name="autumn">Kuzgi</string>
+
+
+    <!--    spring products-->
+    <string name="potatoes">Kartoshka</string>
+    <string name="carrot">Sabzi</string>
+    <string name="tomato">Pomidor</string>
+    <string name="onion">Piyoz</string>
+    <string name="cucumber">Bodring</string>
+    <string name="eggplant">Baqlajon</string>
+    <string name="Pepper">Qalampir (achchiqva boshqalar)</string>
+    <string name="bean">Loviya</string>
+
+    <!--    autumn products-->
+    <string name="onion_autumn">Piyoz</string>
+    <string name="garlic">Sarimsoq</string>
+    <string name="turnip">Sholg\'om</string>
+    <string name="radish">Turp</string>
+    <string name="spinach">Ismaloq</string>
+    <string name="cilantro">Kashnich</string>
+    <string name="dill">Ukrop</string>
+
+</resources>

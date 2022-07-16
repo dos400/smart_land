@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart land</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="theme1">Автоматическое размещение культур</string>
+    <string name="theme2">Агротехника выращивания культур на приусадебном участке</string>
+    <string name="theme3">Доходы и расходы</string>
+    <string name="mualliflar">Авторы</string>
+
+    <string name="title">Smart\nLand</string>
+
+    <!--    Languages-->
+    <string name="language_rus">Русский</string>
+    <string name="language_eng">Английский</string>
+    <string name="language_uzb">Узбекский</string>
+
+    <!--    Seasons-->
+    <string name="spring">Весна</string>
+    <string name="autumn">Осень</string>
+
+    <!--    spring products-->
+    <string name="potatoes">Картофель</string>
+    <string name="carrot">Морковь</string>
+    <string name="tomato">Помидор</string>
+    <string name="onion">Лук</string>
+    <string name="cucumber">Огурец</string>
+    <string name="eggplant">Баклажан</string>
+    <string name="Pepper">Перец (специя и др.)</string>
+    <string name="bean">Бин</string>
+
+    <!--    autumn products-->
+    <string name="onion_autumn">Лук</string>
+    <string name="garlic">Чеснок</string>
+    <string name="turnip">Репа</string>
+    <string name="radish">Редька</string>
+    <string name="spinach">Шпинат</string>
+    <string name="cilantro">Кашнич</string>
+    <string name="dill">Укроп</string>
+
+</resources>
