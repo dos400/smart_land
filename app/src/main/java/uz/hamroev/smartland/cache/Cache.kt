@@ -28,10 +28,26 @@ object Cache {
         }
 
     var isHaveUpdate: Boolean?
-        get() = sharedPreferences.getBoolean("update", false)
+        get() = sharedPreferences.getBoolean("update", true)
         set(value) = sharedPreferences.edit() {
             if (value != null) {
-                it.putBoolean("language", value)
+                it.putBoolean("update", value)
+            }
+        }
+
+    var createDATAoffline: Boolean?
+        get() = sharedPreferences.getBoolean("create", true)
+        set(value) = sharedPreferences.edit() {
+            if (value != null) {
+                it.putBoolean("create", value)
+            }
+        }
+
+    var createDATAonline: Boolean?
+        get() = sharedPreferences.getBoolean("createonline", true)
+        set(value) = sharedPreferences.edit() {
+            if (value != null) {
+                it.putBoolean("createonline", value)
             }
         }
 

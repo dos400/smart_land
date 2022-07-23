@@ -37,4 +37,39 @@
     <string name="cilantro">Кашнич</string>
     <string name="dill">Укроп</string>
 
+    <string name="calculate">Рассчитать</string>
+    <string name="author">Авторы</string>
+
+
+    <!--    nav menu-->
+    <string name="home">Главный</string>
+    <string name="weather">Погода</string>
+    <string name="save">Сохранено</string>
+    <string name="rate">Оценивать</string>
+    <string name="share">Поделиться</string>
+    <string name="exit">Выход</string>
+    <string name="intro">Вступление</string>
+    <string name="language">Язык</string>
+    <string name="remember">Напоминание</string>
+
+    <!--    Weather-->
+    <string name="max_temperature">Максимальная \nтемпература</string>
+    <string name="min_temperature">Минимальная \nтемпература</string>
+    <string name="sunrise">Восход</string>
+    <string name="sunset">Закат солнца</string>
+
+    <string name="cloud">Облака</string>
+    <string name="clear">Чисто</string>
+    <string name="rain">Дождь</string>
+    <string name="snow">Снег</string>
+    <string name="smoke">Дым</string>
+
+    <string name="wind">Ветер</string>
+    <string name="humidy">Влажность</string>
+    <string name="chance_of_rain">Вероятность дождя</string>
+
+
+    <string name="feels_like">Кажется, что</string>
+
+
 </resources>

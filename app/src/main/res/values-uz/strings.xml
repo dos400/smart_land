@@ -38,4 +38,38 @@
     <string name="cilantro">Kashnich</string>
     <string name="dill">Ukrop</string>
 
+    <string name="calculate">Hisoblash</string>
+    <string name="author">Mualliflar</string>
+
+    <!--    nav menu-->
+    <string name="home">Asosiy</string>
+    <string name="weather">Ob-havo</string>
+    <string name="save">Saqlanganlar</string>
+    <string name="rate">Baholash</string>
+    <string name="share">Yuborish</string>
+    <string name="exit">Chiqish</string>
+    <string name="intro">Kirish</string>
+    <string name="language">Til</string>
+    <string name="remember">Eslatma</string>
+
+    <!--    Weather-->
+    <string name="max_temperature">Max temperatura</string>
+    <string name="min_temperature">Min temperatura</string>
+    <string name="sunrise">Quyosh chiqishi</string>
+    <string name="sunset">Quyosh botishi</string>
+
+
+    <string name="cloud">Bulutli</string>
+    <string name="clear">Ochiq havo</string>
+    <string name="rain">Yomg\'irli</string>
+    <string name="snow">Qorli</string>
+    <string name="smoke">Tumanli</string>
+
+    <string name="wind">Shamol</string>
+    <string name="humidy">Namlik</string>
+    <string name="chance_of_rain">Yomg\'ir ehtimoli</string>
+
+    <string name="feels_like">His qilinishi</string>
+
+
 </resources>

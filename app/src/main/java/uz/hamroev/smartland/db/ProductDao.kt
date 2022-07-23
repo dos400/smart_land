@@ -1,9 +1,6 @@
 package uz.hamroev.smartland.db
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import uz.hamroev.smartland.firebase.model.Product
 
 @Dao
@@ -16,7 +13,15 @@ interface ProductDao {
 //    fun getSpringProducts(): List<ProductEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun addProduct(product: Product)
+    fun addProduct(productEntity: ProductEntity)
+
+    @Update
+    fun updateProduct(productEntity: ProductEntity)
+
+    @Query("SELECT * FROM product WHERE seasons=:seasonName")
+    fun getSeasonsProduct(seasonName: String): List<ProductEntity>
+
+
 
 
 }

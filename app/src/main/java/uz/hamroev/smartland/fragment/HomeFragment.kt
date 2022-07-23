@@ -12,10 +12,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import uz.hamroev.smartland.R
+import uz.hamroev.smartland.adapter.NavAdapter
 import uz.hamroev.smartland.adapter.SectionAdapter
 import uz.hamroev.smartland.cache.Cache
 import uz.hamroev.smartland.databinding.DialogLanguageBinding
 import uz.hamroev.smartland.databinding.FragmentHomeBinding
+import uz.hamroev.smartland.model.Nav
 import uz.hamroev.smartland.model.Section
 import uz.hamroev.smartland.onDataPass.OnDataPass
 import java.util.*
@@ -30,14 +32,26 @@ class HomeFragment : Fragment() {
     private val TAG = "HomeFragment"
     lateinit var dataPass: OnDataPass
 
+    lateinit var listNav: ArrayList<Nav>
+    lateinit var navAdapter: NavAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
+        Cache.init(binding.root.context)
         Log.d(TAG, "onCreateView: OnCreate")
         checkLanguage()
+
+
+
+        binding.cardMenu.setOnClickListener {
+            binding.drawerLayout.open()
+            binding.include.typeWriter.animateText(resources.getString(R.string.app_name))
+            binding.include.typeWriter.setCharacterDeley(100)
+        }
 
         binding.cardLanguage.setOnClickListener {
             val alertDialog = AlertDialog.Builder(binding.root.context)
@@ -104,8 +118,49 @@ class HomeFragment : Fragment() {
             })
         binding.rvSection.adapter = sectionAdapter
 
+        loadNav()
+        navAdapter =
+            NavAdapter(binding.root.context, listNav, object : NavAdapter.OnNavClickListener {
+                override fun onClick(nav: Nav, position: Int) {
+                    when (position) {
+                        0 -> {}
+                        1 -> {}
+                        2 -> {}
+                        3 -> {}
+                        4 -> {}
+                        5 -> {}
+                        6 -> {}
+                    }
+                }
+            })
+        binding.rvNav.adapter = navAdapter
+
 
         return binding.root
+    }
+
+    private fun loadNav() {
+        listNav = ArrayList()
+        listNav.add(Nav(resources.getString(R.string.home), R.drawable.ic_home))
+
+        listNav.add(Nav(resources.getString(R.string.intro), R.drawable.ic_intro))
+
+        listNav.add(Nav(resources.getString(R.string.theme1), R.drawable.ic_pack))
+        listNav.add(Nav(resources.getString(R.string.theme2), R.drawable.ic_technical))
+        listNav.add(Nav(resources.getString(R.string.theme3), R.drawable.ic_cash))
+        listNav.add(Nav(resources.getString(R.string.author), R.drawable.ic_users))
+
+        listNav.add(Nav(resources.getString(R.string.save), R.drawable.ic_saved))
+        listNav.add(Nav(resources.getString(R.string.remember), R.drawable.ic_reminder))
+
+        listNav.add(Nav(resources.getString(R.string.weather), R.drawable.ic_weather_white))
+        listNav.add(Nav(resources.getString(R.string.language), R.drawable.ic_language_white))
+
+
+        listNav.add(Nav(resources.getString(R.string.share), R.drawable.ic_rate))
+        listNav.add(Nav(resources.getString(R.string.rate), R.drawable.ic_share))
+
+        listNav.add(Nav(resources.getString(R.string.exit), R.drawable.ic_exit))
     }
 
     private fun startTypeWriterTitle() {
