@@ -49,7 +49,7 @@ class AvtomaticSolveFragment : Fragment() {
 
     lateinit var productDatabase: ProductDatabase
 
-    lateinit var listSelected: ArrayList<Product>
+    lateinit var listSelected: ArrayList<ProductEntity>
 
 
     override fun onCreateView(
@@ -61,30 +61,32 @@ class AvtomaticSolveFragment : Fragment() {
         productDatabase = ProductDatabase.getInstance(binding.root.context)
         listSelected = ArrayList()
         checkSeasons()
+        Log.d(TAG, "onCreateView: ${listProduct.size}")
 
         checkBoxAdapter = CheckBoxAdapter(
             binding.root.context,
             listProduct,
             object : CheckBoxAdapter.OnCheckChangeListener {
                 override fun onCheck(productEntity: ProductEntity, position: Int) {
-                    listSelected.add(
-                        Product(
-                            productEntity.product_name,
-                            productEntity.product_percentage
-                        )
-                    )
+                    listSelected.add(productEntity)
+                    Log.d(TAG, "onCheck: ${listSelected.size}")
                 }
 
                 override fun onCheckDelete(productEntity: ProductEntity, position: Int) {
-
+                    listSelected.remove(productEntity)
                 }
             })
         binding.rvSeason.adapter = checkBoxAdapter
 
         binding.calculateBtn.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putSerializable("select", listSelected)
-            findNavController().navigate(R.id.avtomaticCalculateFragment, bundle)
+            if (listSelected.isNotEmpty()) {
+                val bundle = Bundle()
+                bundle.putSerializable("select", listSelected)
+                findNavController().navigate(R.id.avtomaticCalculateFragment, bundle)
+            } else {
+                toast(getString(R.string.mahsulot_tanlang))
+            }
+
         }
 
 
@@ -95,12 +97,145 @@ class AvtomaticSolveFragment : Fragment() {
         val position = arguments?.getInt("position")
         when (position) {
             0 -> {
-                binding.titleSeason.text = resources.getString(R.string.spring)
-                loadSpringProducts()
+                listProduct = ArrayList()
+                listProduct.clear()
+                val productList = productDatabase.productDao().getSeasonsProduct("spring")
+                for (productEntity in productList) {
+                    when (productEntity.product_name) {
+                        "Kartoshka" -> {
+                            listProduct.add(
+                                ProductEntity(
+                                    resources.getString(R.string.potatoes),
+                                    productEntity.product_percentage
+                                )
+                            )
+                        }
+                        "Sabzi" -> {
+                            listProduct.add(
+                                ProductEntity(
+                                    resources.getString(R.string.carrot),
+                                    productEntity.product_percentage
+                                )
+                            )
+                        }
+                        "Pomidor" -> {
+                            listProduct.add(
+                                ProductEntity(
+                                    resources.getString(R.string.tomato),
+                                    productEntity.product_percentage
+                                )
+                            )
+                        }
+                        "Piyoz" -> {
+                            listProduct.add(
+                                ProductEntity(
+                                    resources.getString(R.string.onion),
+                                    productEntity.product_percentage
+                                )
+                            )
+                        }
+                        "Bodring" -> {
+                            listProduct.add(
+                                ProductEntity(
+                                    resources.getString(R.string.cucumber),
+                                    productEntity.product_percentage
+                                )
+                            )
+                        }
+                        "Baqlajon" -> {
+                            listProduct.add(
+                                ProductEntity(
+                                    resources.getString(R.string.eggplant),
+                                    productEntity.product_percentage
+                                )
+                            )
+                        }
+                        "Qalampir" -> {
+                            listProduct.add(
+                                ProductEntity(
+                                    resources.getString(R.string.Pepper),
+                                    productEntity.product_percentage
+                                )
+                            )
+                        }
+                        "Loviya" -> {
+                            listProduct.add(
+                                ProductEntity(
+                                    resources.getString(R.string.bean),
+                                    productEntity.product_percentage
+                                )
+                            )
+                        }
+                    }
+                }
+
+
             }
             1 -> {
-                binding.titleSeason.text = resources.getString(R.string.autumn)
-                loadAutumnProducts()
+                listProduct = ArrayList()
+                listProduct.clear()
+                val productList = productDatabase.productDao().getSeasonsProduct("autumn")
+                for (productEntity in productList) {
+                    when (productEntity.product_name) {
+                        "Piyoz" -> {
+                            listProduct.add(
+                                ProductEntity(
+                                    resources.getString(R.string.onion_autumn),
+                                    productEntity.product_percentage
+                                )
+                            )
+                        }
+                        "Sarimsoq" -> {
+                            listProduct.add(
+                                ProductEntity(
+                                    resources.getString(R.string.garlic),
+                                    productEntity.product_percentage
+                                )
+                            )
+                        }
+                        "Sholgom" -> {
+                            listProduct.add(
+                                ProductEntity(
+                                    resources.getString(R.string.turnip),
+                                    productEntity.product_percentage
+                                )
+                            )
+                        }
+                        "Turp" -> {
+                            listProduct.add(
+                                ProductEntity(
+                                    resources.getString(R.string.radish),
+                                    productEntity.product_percentage
+                                )
+                            )
+                        }
+                        "Ismaloq" -> {
+                            listProduct.add(
+                                ProductEntity(
+                                    resources.getString(R.string.spinach),
+                                    productEntity.product_percentage
+                                )
+                            )
+                        }
+                        "Kashnich" -> {
+                            listProduct.add(
+                                ProductEntity(
+                                    resources.getString(R.string.cilantro),
+                                    productEntity.product_percentage
+                                )
+                            )
+                        }
+                        "Ukrop" -> {
+                            listProduct.add(
+                                ProductEntity(
+                                    resources.getString(R.string.dill),
+                                    productEntity.product_percentage
+                                )
+                            )
+                        }
+                    }
+                }
+
             }
         }
 

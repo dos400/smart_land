@@ -66,5 +66,11 @@
     <string name="humidy">Humidity</string>
     <string name="chance_of_rain">Chance of rain</string>
     <string name="feels_like">Feels like</string>
+    <string name="mahsulot_tanlang">Select a product</string>
+
+    <string name="save_btn">Save</string>
+
+    <string name="acres">Acres</string>
+    <string name="sotix">Acres</string>
 
 </resources>

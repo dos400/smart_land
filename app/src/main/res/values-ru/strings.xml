@@ -70,6 +70,14 @@
 
 
     <string name="feels_like">Кажется, что</string>
+    <string name="mahsulot_tanlang">Выберите продукт</string>
+
+
+    <string name="save_btn">Сохранить</string>
+
+
+    <string name="acres">Acres</string>
+    <string name="sotix">Acres</string>
 
 
 </resources>

@@ -14,6 +14,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -107,10 +108,11 @@ class WeatherFragment : Fragment() {
         serviceApi.getWeatherByLonAndLot(latitude.toString(), longitude.toString())
             .enqueue(object : Callback<Weather> {
                 override fun onResponse(call: Call<Weather>, response: Response<Weather>) {
-
+                    val anim = AnimationUtils.loadAnimation(binding.root.context, R.anim.anim_weather_fragment)
                     if (response.isSuccessful) {
                         binding.progressLinear.gone()
                         binding.main.visible()
+                        binding.main.startAnimation(anim)
 
                         val main = response.body()?.main
                         val temp = (main?.temp!! - 273.15)

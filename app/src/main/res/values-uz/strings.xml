@@ -70,6 +70,14 @@
     <string name="chance_of_rain">Yomg\'ir ehtimoli</string>
 
     <string name="feels_like">His qilinishi</string>
+    <string name="mahsulot_tanlang">Mahsulot tanlang</string>
+
+
+    <string name="save_btn">Saqlash</string>
+
+
+    <string name="acres">Acres</string>
+    <string name="sotix">Acres</string>
 
 
 </resources>

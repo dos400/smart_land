@@ -55,6 +55,7 @@ class HomeActivity : AppCompatActivity(), OnDataPass {
 
     }
 
+
     private fun updateData() {
         if (networkHelper.isNetworkConnected()) {
             try {

@@ -22,10 +22,12 @@ class CheckBoxAdapter(
         fun onBind(productEntity: ProductEntity, position: Int) {
             itemCheckboxBinding.productName.text = productEntity.product_name
 
-            if (itemCheckboxBinding.checkbox.isChecked) {
-                onCheckChangeListener.onCheck(productEntity, position)
-            } else {
-                onCheckChangeListener.onCheckDelete(productEntity, position)
+            itemCheckboxBinding.checkbox.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    onCheckChangeListener.onCheck(productEntity, position)
+                } else {
+                    onCheckChangeListener.onCheckDelete(productEntity, position)
+                }
             }
 
         }
