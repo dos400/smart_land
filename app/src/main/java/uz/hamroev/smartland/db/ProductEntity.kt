@@ -5,7 +5,7 @@ import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import java.io.Serializable
 
-@Entity(tableName = "product")
+@Entity(tableName = "productland")
 class ProductEntity: Serializable {
 
     @PrimaryKey

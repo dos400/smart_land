@@ -6,7 +6,7 @@ import uz.hamroev.smartland.firebase.model.Product
 @Dao
 interface ProductDao {
 
-    @Query("SELECT * FROM product")
+    @Query("SELECT * FROM productland")
     fun getAllProduct(): List<ProductEntity>
 
 //    @Query("SELECT * FROM product WHERE seasons='spring'")
@@ -18,7 +18,7 @@ interface ProductDao {
     @Update
     fun updateProduct(productEntity: ProductEntity)
 
-    @Query("SELECT * FROM product WHERE seasons=:seasonName")
+    @Query("SELECT * FROM productland WHERE seasons=:seasonName")
     fun getSeasonsProduct(seasonName: String): List<ProductEntity>
 
 

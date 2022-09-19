@@ -19,7 +19,7 @@ abstract class ProductDatabase : RoomDatabase() {
                 instance = Room.databaseBuilder(
                     context.applicationContext,
                     ProductDatabase::class.java,
-                    "product.db"
+                    "productland.db"
                 )
                     .fallbackToDestructiveMigration()
                     .allowMainThreadQueries()

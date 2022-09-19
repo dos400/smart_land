@@ -40,21 +40,35 @@ class AvtomaticCalculateFragment : Fragment() {
             Log.d(TAG, "onCreateView: ${product.product_name} - ${product.product_percentage}\n")
         }
 
-        binding.modelEditText.addTextChangedListener { number ->
-            Log.d(TAG, "onCreateView: ${number.toString()}")
-            for (productEntity in listSelected) {
-                val s =
-                    number.toString().trim().toInt() * (productEntity.product_percentage!! / 100)
+        binding.calculateButton.setOnClickListener {
+            listCalculate = ArrayList()
+            listCalculate.clear()
+            val number = binding.modelEditText.text
 
+            for (productEntity in listSelected) {
+                var foiz = (productEntity.product_percentage!! * 0.01)
+                var s = number.toString().toInt() * foiz
+
+                Log.d(TAG, "onCreateView: 1: ${number}")
+                Log.d(TAG, "onCreateView: 2: ${number.toString()}")
+                Log.d(TAG, "onCreateView: 3: ${number.toString().toInt()}")
+                Log.d(TAG, "onCreateView: 4: ${(productEntity.product_percentage!! / 100)}")
+                Log.d(TAG, "onCreateView: 5: ${(productEntity.product_percentage!! * 0.01)}")
+                Log.d(
+                    TAG,
+                    "onCreateView: 6: ${
+                        number.toString().toInt() * (productEntity.product_percentage!! / 100)
+                    }"
+                )
+                Log.d(TAG, "onCreateView: ${s}")
                 listCalculate.add(
                     Selected(
                         productEntity.product_name, s.toString()
-
                     )
                 )
             }
-
             loadAdapter()
+
         }
 
 

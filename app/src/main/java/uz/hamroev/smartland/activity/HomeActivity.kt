@@ -67,6 +67,7 @@ class HomeActivity : AppCompatActivity(), OnDataPass {
                         for (productEntity in productList) {
                             productDatabase.productDao().updateProduct(productEntity)
                         }
+                        Log.d(TAG, "updateData: Update done")
 
                     }
                     .addOnFailureListener { }

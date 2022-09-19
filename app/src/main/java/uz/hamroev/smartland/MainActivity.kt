@@ -102,7 +102,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun isHaveInternet() {
         if (networkHelper.isNetworkConnected()) {
+
+            Log.d(TAG, "isHaveInternet: ")
             if (Cache.createDATAonline == true) {
+                Log.d(TAG, "isHaveInternet: kirdi")
                 val listProduct = ArrayList<ProductEntity>()
                 listProduct.add(ProductEntity("Kartoshka", 29, "spring"))
                 listProduct.add(ProductEntity("Sabzi", 28, "spring"))
@@ -126,13 +129,18 @@ class MainActivity : AppCompatActivity() {
                     for (product in listProduct) {
                         db.collection("product")
                             .add(product)
-                            .addOnSuccessListener { }
-                            .addOnFailureListener { }
+                            .addOnSuccessListener {
+                                Log.d(TAG, "isHaveInternet: OMADLI")
+                                Cache.createDATAonline = false
+                            }
+                            .addOnFailureListener {
+                                Log.d(TAG, "isHaveInternet: XATO")
+                            }
                     }
                 } catch (e: Exception) {
 
                 }
-                Cache.createDATAonline = false
+
             }
         }
     }

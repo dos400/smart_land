@@ -49,6 +49,8 @@
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="app/src/main/res/layout/dialog_language.xml" value="0.1616075245831552" />
+        <entry key="app/src/main/res/layout/fragment_agro_technical_products.xml" value="0.1582946390882229" />
+        <entry key="app/src/main/res/layout/fragment_agro_technical_products_info.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_agrotexnika.xml" value="0.1616075245831552" />
         <entry key="app/src/main/res/layout/fragment_avtomatic_calculate.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_avtomatic_solve.xml" value="0.22" />
@@ -62,6 +64,7 @@
         <entry key="app/src/main/res/layout/item_author.xml" value="0.16075245831551946" />
         <entry key="app/src/main/res/layout/item_checkbox.xml" value="0.22" />
         <entry key="app/src/main/res/layout/item_nav.xml" value="0.16075245831551946" />
+        <entry key="app/src/main/res/layout/item_product_uzb.xml" value="0.2" />
         <entry key="app/src/main/res/layout/item_section.xml" value="0.22" />
         <entry key="app/src/main/res/layout/item_selected.xml" value="0.22" />
       </map>
