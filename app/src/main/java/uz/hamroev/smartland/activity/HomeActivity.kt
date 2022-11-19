@@ -51,7 +51,7 @@ class HomeActivity : AppCompatActivity(), OnDataPass {
             }).check()
         networkHelper = NetworkHelper(this)
         productDatabase = ProductDatabase.getInstance(this)
-        updateData()
+        //updateData()
 
     }
 

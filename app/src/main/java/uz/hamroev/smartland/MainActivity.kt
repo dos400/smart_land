@@ -41,8 +41,8 @@ class MainActivity : AppCompatActivity() {
         Cache.init(this)
         productDatabase = ProductDatabase.getInstance(this)
         networkHelper = NetworkHelper(this)
-        createData()
-        isHaveInternet()
+//        createData()
+//        isHaveInternet()
 
         init_shadow()
         @Suppress("DEPRECATION")
@@ -56,6 +56,27 @@ class MainActivity : AppCompatActivity() {
         }
         supportActionBar?.hide()
 
+        val listProduct = ArrayList<ProductEntity>()
+        listProduct.add(ProductEntity("Kartoshka", 29, "spring"))
+        listProduct.add(ProductEntity("Sabzi", 28, "spring"))
+        listProduct.add(ProductEntity("Pomidor", 19, "spring"))
+        listProduct.add(ProductEntity("Piyoz bahorgi", 11, "spring"))
+        listProduct.add(ProductEntity("Bodring", 8, "spring"))
+        listProduct.add(ProductEntity("Baqlajon", 2, "spring"))
+        listProduct.add(ProductEntity("Qalampir", 2, "spring"))
+        listProduct.add(ProductEntity("Loviya", 1, "spring"))
+
+        listProduct.add(ProductEntity("Piyoz", 26, "autumn"))
+        listProduct.add(ProductEntity("Sarimsoq", 20, "autumn"))
+        listProduct.add(ProductEntity("Sholgom", 18, "autumn"))
+        listProduct.add(ProductEntity("Turp", 14, "autumn"))
+        listProduct.add(ProductEntity("Ismaloq", 11, "autumn"))
+        listProduct.add(ProductEntity("Kashnich", 6, "autumn"))
+        listProduct.add(ProductEntity("Ukrop", 5, "autumn"))
+
+        for (product in listProduct) {
+            productDatabase.productDao().addProduct(product)
+        }
 
 
 

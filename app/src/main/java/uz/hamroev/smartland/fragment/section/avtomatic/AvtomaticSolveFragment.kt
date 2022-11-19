@@ -126,7 +126,7 @@ class AvtomaticSolveFragment : Fragment() {
                                 )
                             )
                         }
-                        "Piyoz" -> {
+                        "Piyoz bahorgi" -> {
                             listProduct.add(
                                 ProductEntity(
                                     resources.getString(R.string.onion),

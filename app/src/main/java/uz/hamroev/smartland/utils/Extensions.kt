@@ -13,7 +13,10 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.FontRes
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
+import java.math.RoundingMode
 import java.text.DecimalFormat
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 fun View.visible() {
@@ -38,7 +41,6 @@ fun String.formatPrice(): String {
     val formatter = DecimalFormat("###,###")
     return formatter.format(amount).replace(",", " ")
 }
-
 
 
 fun Context.toast(msg: String, length: Int = Toast.LENGTH_SHORT) {
@@ -95,3 +97,41 @@ operator fun String.times(n: Int): String {
     }
     return sb.toString()
 }
+
+/*
+
+CREATE TABLE "daromad" (
+	"id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	"mahsulot_nomi"	TEXT NOT NULL,
+	"maydoni"	INTEGER NOT NULL,
+	"foyda"	INTEGER NOT NULL,
+	"bozor_narx"	INTEGER NOT NULL,
+	"daromadi"	INTEGER NOT NULL,
+	"hosil_davomiyligi"	INTEGER NOT NULL,
+	"izoh_uz"	TEXT NOT NULL,
+	"izoh_ru"	TEXT,
+	"izoh_en"	TEXT
+);
+
+* */
+
+fun Float.roundTo(n: Int): Float {
+    return "%.${n}f".format(this).toFloat()
+}
+
+fun Double.roundTo(n: Int): Double {
+    return "%.${n}f".format(this).toDouble()
+}
+
+fun getCurrentDateAndTime(): String {
+    val dateAndTime: Date = Calendar.getInstance().time
+    val dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
+    val timeFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
+    val date = dateFormat.format(dateAndTime)
+    val time = timeFormat.format(dateAndTime)
+    val vaqt: String = "$date - $time"
+    return vaqt
+
+}
+
+
