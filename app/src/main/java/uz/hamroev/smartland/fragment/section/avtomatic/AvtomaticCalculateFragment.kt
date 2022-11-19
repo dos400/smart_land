@@ -89,52 +89,52 @@ class AvtomaticCalculateFragment : Fragment() {
                     3 -> {
                         allProductData =
                             "${listCalculate[0].productName} - ${listCalculate[0].productAcres} m2\n" +
-                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"
+                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"+
                         "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"
                     }
                     4 -> {
                         allProductData =
                             "${listCalculate[0].productName} - ${listCalculate[0].productAcres} m2\n" +
-                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"
-                        "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"
+                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"+
+                        "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"+
                         "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n"
                     }
                     5 -> {
                         allProductData =
                             "${listCalculate[0].productName} - ${listCalculate[0].productAcres} m2\n" +
-                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"
-                        "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"
-                        "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n"
+                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"+
+                        "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"+
+                        "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n"+
                         "${listCalculate[4].productName} - ${listCalculate[4].productAcres} m2\n"
                     }
                     6 -> {
                         allProductData =
                             "${listCalculate[0].productName} - ${listCalculate[0].productAcres} m2\n" +
-                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"
-                        "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"
-                        "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n"
-                        "${listCalculate[4].productName} - ${listCalculate[4].productAcres} m2\n"
+                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"+
+                        "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"+
+                        "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n"+
+                        "${listCalculate[4].productName} - ${listCalculate[4].productAcres} m2\n"+
                         "${listCalculate[5].productName} - ${listCalculate[5].productAcres} m2\n"
                     }
                     7 -> {
                         allProductData =
                             "${listCalculate[0].productName} - ${listCalculate[0].productAcres} m2\n" +
-                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"
-                        "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"
-                        "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n"
-                        "${listCalculate[4].productName} - ${listCalculate[4].productAcres} m2\n"
-                        "${listCalculate[5].productName} - ${listCalculate[5].productAcres} m2\n"
+                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"+
+                        "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"+
+                        "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n"+
+                        "${listCalculate[4].productName} - ${listCalculate[4].productAcres} m2\n"+
+                        "${listCalculate[5].productName} - ${listCalculate[5].productAcres} m2\n"+
                         "${listCalculate[6].productName} - ${listCalculate[6].productAcres} m2\n"
                     }
                     8 -> {
                         allProductData =
                             "${listCalculate[0].productName} - ${listCalculate[0].productAcres} m2\n" +
-                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"
-                        "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"
-                        "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n"
-                        "${listCalculate[4].productName} - ${listCalculate[4].productAcres} m2\n"
-                        "${listCalculate[5].productName} - ${listCalculate[5].productAcres} m2\n"
-                        "${listCalculate[6].productName} - ${listCalculate[6].productAcres} m2\n"
+                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"+
+                        "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"+
+                        "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n"+
+                        "${listCalculate[4].productName} - ${listCalculate[4].productAcres} m2\n"+
+                        "${listCalculate[5].productName} - ${listCalculate[5].productAcres} m2\n"+
+                        "${listCalculate[6].productName} - ${listCalculate[6].productAcres} m2\n"+
                         "${listCalculate[7].productName} - ${listCalculate[7].productAcres} m2\n"
                     }
                 }

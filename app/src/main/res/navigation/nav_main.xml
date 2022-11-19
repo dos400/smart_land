@@ -25,6 +25,12 @@
         <action
             android:id="@+id/action_homeFragment_to_weatherFragment"
             app:destination="@id/weatherFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_kirishFragment"
+            app:destination="@id/kirishFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_saqlanganlarFragment"
+            app:destination="@id/saqlanganlarFragment" />
     </fragment>
     <fragment
         android:id="@+id/agrotexnikaFragment"
@@ -87,4 +93,14 @@
         android:name="uz.hamroev.smartland.fragment.section.agroTechnical.AgroTechnicalProductsInfoFragment"
         android:label="fragment_agro_technical_products_info"
         tools:layout="@layout/fragment_agro_technical_products_info" />
+    <fragment
+        android:id="@+id/kirishFragment"
+        android:name="uz.hamroev.smartland.fragment.KirishFragment"
+        android:label="fragment_kirish"
+        tools:layout="@layout/fragment_kirish" />
+    <fragment
+        android:id="@+id/saqlanganlarFragment"
+        android:name="uz.hamroev.smartland.fragment.SaqlanganlarFragment"
+        android:label="fragment_saqlanganlar"
+        tools:layout="@layout/fragment_saqlanganlar" />
 </navigation>

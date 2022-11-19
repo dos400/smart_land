@@ -8,8 +8,9 @@ import uz.hamroev.smartland.model.Selected
 @Entity(tableName = "savedresutat")
 class SavedResutatEntity {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     var id: Int = 0
+
     var area: String = ""
     var allProductAbout: String = ""
     var seasons: String = ""
