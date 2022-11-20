@@ -58,6 +58,10 @@ class AvtomaticSolveFragment : Fragment() {
     ): View {
         binding = FragmentAvtomaticSolveBinding.inflate(layoutInflater, container, false)
 
+        binding.backIv.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
         productDatabase = ProductDatabase.getInstance(binding.root.context)
         listSelected = ArrayList()
         checkSeasons()

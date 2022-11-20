@@ -4,6 +4,7 @@ import android.app.Application
 import uz.hamroev.smartland.cache.Cache
 import uz.hamroev.smartland.db.ProductDatabase
 import uz.hamroev.smartland.db.agrotexnikaUZB.ProductUzbDatabase
+import uz.hamroev.smartland.db.daromad.DaromadDatabase
 import uz.hamroev.smartland.db.savedResultat.SavedResutatDatabase
 
 class App : Application() {
@@ -13,5 +14,6 @@ class App : Application() {
         ProductDatabase.getInstance(this)
         ProductUzbDatabase.init(this)
         SavedResutatDatabase.getInstance(this)
+        DaromadDatabase.init(this)
     }
 }

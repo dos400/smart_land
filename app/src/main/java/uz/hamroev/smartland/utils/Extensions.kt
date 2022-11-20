@@ -113,6 +113,16 @@ CREATE TABLE "daromad" (
 	"izoh_en"	TEXT
 );
 
+
+CREATE TABLE "daromad" (
+	"id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	"ekin_nomi"	TEXT NOT NULL,
+	"xarajat"	INTEGER NOT NULL,
+	"daromad"	INTEGER NOT NULL,
+	"sof_foyda"	INTEGER NOT NULL,
+	"maydoni"	INTEGER NOT NULL
+);
+
 * */
 
 fun Float.roundTo(n: Int): Float {
@@ -133,5 +143,7 @@ fun getCurrentDateAndTime(): String {
     return vaqt
 
 }
+
+
 
 

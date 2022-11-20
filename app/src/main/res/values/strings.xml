@@ -73,4 +73,10 @@
     <string name="acres">Acres</string>
     <string name="sotix">Acres</string>
 
+    <string name="kiritilgan_maydon">Input field</string>
+
+    <string name="daromad">Income</string>
+    <string name="xarajat">Cost</string>
+    <string name="sof_foyda">Net profit</string>
+
 </resources>

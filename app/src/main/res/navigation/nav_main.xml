@@ -54,7 +54,11 @@
         android:id="@+id/daromadFragment"
         android:name="uz.hamroev.smartland.fragment.section.DaromadFragment"
         android:label="fragment_daromad"
-        tools:layout="@layout/fragment_daromad" />
+        tools:layout="@layout/fragment_daromad" >
+        <action
+            android:id="@+id/action_daromadFragment_to_daromadMahsulotlarFragment"
+            app:destination="@id/daromadMahsulotlarFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mualliflarFragment"
         android:name="uz.hamroev.smartland.fragment.section.MualliflarFragment"
@@ -103,4 +107,18 @@
         android:name="uz.hamroev.smartland.fragment.SaqlanganlarFragment"
         android:label="fragment_saqlanganlar"
         tools:layout="@layout/fragment_saqlanganlar" />
+    <fragment
+        android:id="@+id/daromadMahsulotlarFragment"
+        android:name="uz.hamroev.smartland.fragment.daromad.DaromadMahsulotlarFragment"
+        android:label="fragment_daromad_mahsulotlar"
+        tools:layout="@layout/fragment_daromad_mahsulotlar" >
+        <action
+            android:id="@+id/action_daromadMahsulotlarFragment_to_daromadHisoblashFragment"
+            app:destination="@id/daromadHisoblashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/daromadHisoblashFragment"
+        android:name="uz.hamroev.smartland.fragment.daromad.DaromadHisoblashFragment"
+        android:label="fragment_daromad_hisoblash"
+        tools:layout="@layout/fragment_daromad_hisoblash" />
 </navigation>

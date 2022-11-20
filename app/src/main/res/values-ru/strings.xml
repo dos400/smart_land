@@ -76,8 +76,14 @@
     <string name="save_btn">Сохранить</string>
 
 
-    <string name="acres">Acres</string>
-    <string name="sotix">Acres</string>
+    <string name="acres">сколько м2</string>
+    <string name="sotix">сколько м2</string>
+
+    <string name="kiritilgan_maydon">Поле ввода</string>
+
+    <string name="daromad">Доход</string>
+    <string name="xarajat">Расходы</string>
+    <string name="sof_foyda">Чистая прибыль</string>
 
 
 </resources>

@@ -52,7 +52,7 @@ class AvtomaticCalculateFragment : Fragment() {
 
         val listSelected = arguments?.getSerializable("select") as ArrayList<ProductEntity>
         for (product in listSelected) {
-            Log.d(TAG, "onCreateView: ${product.product_name} - ${product.product_percentage}\n")
+            Log.d(TAG, "onCreateView: ${product.product_name} - ${product.product_percentage}\n Fasl = ${product.seasons}")
         }
 
         binding.calculateButton.setOnClickListener {
@@ -89,53 +89,53 @@ class AvtomaticCalculateFragment : Fragment() {
                     3 -> {
                         allProductData =
                             "${listCalculate[0].productName} - ${listCalculate[0].productAcres} m2\n" +
-                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"+
-                        "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"
+                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n" +
+                                    "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"
                     }
                     4 -> {
                         allProductData =
                             "${listCalculate[0].productName} - ${listCalculate[0].productAcres} m2\n" +
-                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"+
-                        "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"+
-                        "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n"
+                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n" +
+                                    "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n" +
+                                    "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n"
                     }
                     5 -> {
                         allProductData =
                             "${listCalculate[0].productName} - ${listCalculate[0].productAcres} m2\n" +
-                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"+
-                        "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"+
-                        "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n"+
-                        "${listCalculate[4].productName} - ${listCalculate[4].productAcres} m2\n"
+                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n" +
+                                    "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n" +
+                                    "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n" +
+                                    "${listCalculate[4].productName} - ${listCalculate[4].productAcres} m2\n"
                     }
                     6 -> {
                         allProductData =
                             "${listCalculate[0].productName} - ${listCalculate[0].productAcres} m2\n" +
-                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"+
-                        "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"+
-                        "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n"+
-                        "${listCalculate[4].productName} - ${listCalculate[4].productAcres} m2\n"+
-                        "${listCalculate[5].productName} - ${listCalculate[5].productAcres} m2\n"
+                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n" +
+                                    "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n" +
+                                    "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n" +
+                                    "${listCalculate[4].productName} - ${listCalculate[4].productAcres} m2\n" +
+                                    "${listCalculate[5].productName} - ${listCalculate[5].productAcres} m2\n"
                     }
                     7 -> {
                         allProductData =
                             "${listCalculate[0].productName} - ${listCalculate[0].productAcres} m2\n" +
-                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"+
-                        "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"+
-                        "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n"+
-                        "${listCalculate[4].productName} - ${listCalculate[4].productAcres} m2\n"+
-                        "${listCalculate[5].productName} - ${listCalculate[5].productAcres} m2\n"+
-                        "${listCalculate[6].productName} - ${listCalculate[6].productAcres} m2\n"
+                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n" +
+                                    "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n" +
+                                    "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n" +
+                                    "${listCalculate[4].productName} - ${listCalculate[4].productAcres} m2\n" +
+                                    "${listCalculate[5].productName} - ${listCalculate[5].productAcres} m2\n" +
+                                    "${listCalculate[6].productName} - ${listCalculate[6].productAcres} m2\n"
                     }
                     8 -> {
                         allProductData =
                             "${listCalculate[0].productName} - ${listCalculate[0].productAcres} m2\n" +
-                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n"+
-                        "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n"+
-                        "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n"+
-                        "${listCalculate[4].productName} - ${listCalculate[4].productAcres} m2\n"+
-                        "${listCalculate[5].productName} - ${listCalculate[5].productAcres} m2\n"+
-                        "${listCalculate[6].productName} - ${listCalculate[6].productAcres} m2\n"+
-                        "${listCalculate[7].productName} - ${listCalculate[7].productAcres} m2\n"
+                                    "${listCalculate[1].productName} - ${listCalculate[1].productAcres} m2\n" +
+                                    "${listCalculate[2].productName} - ${listCalculate[2].productAcres} m2\n" +
+                                    "${listCalculate[3].productName} - ${listCalculate[3].productAcres} m2\n" +
+                                    "${listCalculate[4].productName} - ${listCalculate[4].productAcres} m2\n" +
+                                    "${listCalculate[5].productName} - ${listCalculate[5].productAcres} m2\n" +
+                                    "${listCalculate[6].productName} - ${listCalculate[6].productAcres} m2\n" +
+                                    "${listCalculate[7].productName} - ${listCalculate[7].productAcres} m2\n"
                     }
                 }
 
@@ -486,6 +486,11 @@ class AvtomaticCalculateFragment : Fragment() {
     private fun roundNumber1By(number: Float): String {
         val to = number.roundTo(1)
         return to.toString()
+    }
+
+    private fun round1By(number: Float): Float {
+        val format: Float = String.format("%.2f", number).toFloat()
+        return format
     }
 
 

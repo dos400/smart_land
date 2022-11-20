@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import uz.hamroev.smartland.R
+import uz.hamroev.smartland.adapter.SectionAdapter
 import uz.hamroev.smartland.databinding.FragmentDaromadBinding
+import uz.hamroev.smartland.model.Section
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,6 +35,8 @@ class DaromadFragment : Fragment() {
     }
 
     lateinit var binding: FragmentDaromadBinding
+    lateinit var list: ArrayList<Section>
+    lateinit var sectionAdapter: SectionAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,9 +47,28 @@ class DaromadFragment : Fragment() {
             findNavController().popBackStack()
         }
 
+
+        loadSections()
+        sectionAdapter = SectionAdapter(
+            binding.root.context,
+            list,
+            object : SectionAdapter.OnSectionClickListener {
+                override fun onClick(section: Section, position: Int) {
+                    val bundle = Bundle()
+                    bundle.putInt("position", position)
+                    findNavController().navigate(R.id.daromadMahsulotlarFragment, bundle)
+                }
+            })
+        binding.rvSeason.adapter = sectionAdapter
+
         return binding.root
     }
 
+    private fun loadSections() {
+        list = ArrayList()
+        list.add(Section(resources.getString(R.string.spring), R.drawable.ic_spring))
+        list.add(Section(resources.getString(R.string.autumn), R.drawable.ic_autumn))
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of

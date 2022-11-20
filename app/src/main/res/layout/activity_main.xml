@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:gravity="center"
-                android:text="iAndroid.uz | 2022"
+                android:text="iAndroid.uz | 2023"
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 android:textStyle="bold" />

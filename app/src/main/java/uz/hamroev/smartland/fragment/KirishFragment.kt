@@ -1,11 +1,16 @@
 package uz.hamroev.smartland.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.squareup.okhttp.Cache
 import uz.hamroev.smartland.R
+import uz.hamroev.smartland.databinding.FragmentKirishBinding
+import uz.hamroev.smartland.db.daromad.DaromadDatabase
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,12 +35,38 @@ class KirishFragment : Fragment() {
         }
     }
 
+    lateinit var binding: FragmentKirishBinding
+    private  val TAG = "KirishFragment"
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_kirish, container, false)
+    ): View {
+        binding = FragmentKirishBinding.inflate(layoutInflater)
+
+
+        binding.backIv.setOnClickListener {
+            findNavController().popBackStack()
+        }
+        when(uz.hamroev.smartland.cache.Cache.language){
+            "uz"->{
+                binding.info.text = """
+                    
+           """.trimIndent()
+            }
+            "ru"->{
+                binding.info.text = """
+                    
+                """.trimIndent()
+            }
+            "en"->{
+                binding.info.text = """
+                    
+                """.trimIndent()
+            }
+        }
+
+
+        return binding.root
     }
 
     companion object {

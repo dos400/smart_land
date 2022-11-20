@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import uz.hamroev.smartland.R
+import uz.hamroev.smartland.adapter.SavedProductAdapter
+import uz.hamroev.smartland.databinding.FragmentSaqlanganlarBinding
+import uz.hamroev.smartland.db.savedResultat.SavedResutatDatabase
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,12 +34,27 @@ class SaqlanganlarFragment : Fragment() {
         }
     }
 
+    lateinit var binding: FragmentSaqlanganlarBinding
+    lateinit var savedProductAdapter: SavedProductAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_saqlanganlar, container, false)
+    ): View {
+        binding = FragmentSaqlanganlarBinding.inflate(layoutInflater, container, false)
+
+        binding.backIv.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
+        savedProductAdapter = SavedProductAdapter(
+            requireContext(),
+            SavedResutatDatabase.getInstance(requireContext()).savedResutatDao()
+                .getAllSavedResultat().reversed()
+        )
+        binding.rvSaved.adapter = savedProductAdapter
+
+
+        return binding.root
     }
 
     companion object {
