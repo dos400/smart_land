@@ -6,12 +6,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import uz.hamroev.smartland.databinding.ItemProductUzbBinding
 import uz.hamroev.smartland.db.agrotexnikaUZB.ProductUzbEntity
+import uz.hamroev.smartland.model.agrotexnika.Agrotexnika
 import uz.hamroev.smartland.model.image.Img
 
 class ProductUzbAdapter(
     var context: Context,
-    var listProduct: List<ProductUzbEntity>,
-    var listImage: ArrayList<Img>,
+    var listAgrotexnika: ArrayList<Agrotexnika>,
     var onProductUzbClickListener: OnProductUzbClickListener
 ) : RecyclerView.Adapter<ProductUzbAdapter.VhProductUzb>() {
 
@@ -19,12 +19,12 @@ class ProductUzbAdapter(
         RecyclerView.ViewHolder(itemProductUzbBinding.root) {
 
 
-        fun onBind(productUzbEntity: ProductUzbEntity, imgPosition: Img, position: Int) {
-            itemProductUzbBinding.productName.text = productUzbEntity.product_name
-            itemProductUzbBinding.productImg.setImageResource(imgPosition.img)
+        fun onBind(agrotexnika: Agrotexnika, position: Int) {
+            itemProductUzbBinding.productName.text = agrotexnika.productName
+//            itemProductUzbBinding.productImg.setImageResource(agrotexnika.img)
 
             itemProductUzbBinding.card.setOnClickListener {
-                onProductUzbClickListener.onClick(productUzbEntity, imgPosition, position)
+                onProductUzbClickListener.onClick(agrotexnika, position)
             }
 
 
@@ -42,12 +42,12 @@ class ProductUzbAdapter(
     }
 
     override fun onBindViewHolder(holder: VhProductUzb, position: Int) {
-        holder.onBind(listProduct[position], listImage[position], position)
+        holder.onBind(listAgrotexnika[position], position)
     }
 
-    override fun getItemCount(): Int = listProduct.size
+    override fun getItemCount(): Int = listAgrotexnika.size
 
     interface OnProductUzbClickListener {
-        fun onClick(productUzbEntity: ProductUzbEntity, imgPosition: Img, position: Int)
+        fun onClick(agrotexnika: Agrotexnika, position: Int)
     }
 }

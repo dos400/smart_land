@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Smart land</string>
     <string name="hello_blank_fragment">Mualliflar</string>
-    <string name="theme1">Ekinlarni avtomatik joylashtirish</string>
+    <string name="theme1">Sabzavotlarni joylashtirish</string>
     <string name="theme2">Tomorqa yer maydonida yetishtiriladigan ekinlar agrotexnikasi</string>
     <string name="theme3">Daromad va Xarajat</string>
     <string name="mualliflar">Mualliflar</string>
@@ -50,7 +50,7 @@
     <string name="exit">Chiqish</string>
     <string name="intro">Kirish</string>
     <string name="language">Til</string>
-    <string name="remember">Eslatma</string>
+    <string name="remember">Kitob</string>
 
     <!--    Weather-->
     <string name="max_temperature">Max temperatura</string>
@@ -76,7 +76,7 @@
     <string name="save_btn">Saqlash</string>
 
 
-    <string name="acres">necha m2</string>
+    <string name="acres">Necha m<sup>2</sup></string>
     <string name="sotix">Acres</string>
 
 
@@ -85,5 +85,6 @@
     <string name="daromad">Daromad</string>
     <string name="xarajat">Xarajat</string>
     <string name="sof_foyda">Sof foyda</string>
+    <string name="m2">m<sup>2</sup></string>
 
 </resources>

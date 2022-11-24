@@ -15,4 +15,8 @@ interface ProductUzbDao {
 
     @Query("SELECT * FROM product WHERE product_name=:product_name")
     fun getByProductName(product_name: String): List<ProductUzbEntity>
+
+    @Query("SELECT * FROM product WHERE season=:seasonName AND id=:id2")
+    fun getByProductSeasonsAndPosition(seasonName: String, id2: Int ): List<ProductUzbEntity>
+
 }

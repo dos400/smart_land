@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import uz.hamroev.smartland.R
 import uz.hamroev.smartland.databinding.FragmentAgroTechnicalProductsInfoBinding
 import uz.hamroev.smartland.db.agrotexnikaUZB.ProductUzbDatabase
+import uz.hamroev.smartland.db.agrotexnikaUZB.ProductUzbEntity
 import uz.hamroev.smartland.model.image.Img
 import uz.hamroev.smartland.utils.gone
 import uz.hamroev.smartland.utils.invisible
@@ -32,9 +33,12 @@ class AgroTechnicalProductsInfoFragment : Fragment() {
         val productName1: String = arguments?.getString("product_name")!!
         val seasonPosition = arguments?.getInt("seasonposition")!!
         val productPosition = arguments?.getInt("productposition")!!
+        Log.d(TAG, "onCreateView: productPosition =  ${productPosition}")
 
-        val list = ProductUzbDatabase.GET.getProductUzbDatabase().getProductUzbDao()
-            .getByProductName(productName1)
+
+//        val list = ProductUzbDatabase.GET.getProductUzbDatabase().getProductUzbDao()
+//            .getByProductName(productName1)
+
 
         if (seasonPosition == 0) {
             val imgList = ArrayList<Img>()
@@ -47,6 +51,36 @@ class AgroTechnicalProductsInfoFragment : Fragment() {
             imgList.add(Img(R.drawable.bulgorqalampiri))
             imgList.add(Img(R.drawable.loviya))
             binding.productImage.setImageResource(imgList[productPosition].img)
+
+            val list = ProductUzbDatabase.GET.getProductUzbDatabase().getProductUzbDao()
+                .getByProductSeasonsAndPosition("bahor", productPosition + 1)
+
+            list.forEach { productUzbEntity ->
+                binding.apply {
+                    productName.text = productUzbEntity.product_name
+
+                    ekilishiInfo.text = productUzbEntity.ekilishi
+                    parvarishiInfo.text = productUzbEntity.parvarishi
+                    ogitlashInfo.text = productUzbEntity.ogitlash
+                    sugorishInfo.text = productUzbEntity.sugorish
+                    qarshiKurashInfo.text = productUzbEntity.qarshi_kurash
+
+                    if (productUzbEntity.harorat == "0") {
+                        binding.haroratCard.gone()
+                    } else {
+                        haroratInfo.text = productUzbEntity.harorat
+                    }
+
+                    if (productUzbEntity.davri == "0") {
+                        binding.davriCard.gone()
+                    } else {
+                        davriInfo.text = productUzbEntity.davri
+                    }
+
+
+                }
+            }
+
         } else if (seasonPosition == 1) {
             val imgList = ArrayList<Img>()
             imgList.add(Img(R.drawable.kuzgipiyoz))
@@ -57,33 +91,38 @@ class AgroTechnicalProductsInfoFragment : Fragment() {
             imgList.add(Img(R.drawable.ukrop))
             imgList.add(Img(R.drawable.kashnich))
             binding.productImage.setImageResource(imgList[productPosition].img)
-        }
 
-        list.forEach { productUzbEntity ->
-            binding.apply {
-                productName.text = productUzbEntity.product_name
+            val list =  ProductUzbDatabase.GET.getProductUzbDatabase().getProductUzbDao()
+                .getByProductSeasonsAndPosition("kuz", productPosition + 9)
 
-                ekilishiInfo.text = productUzbEntity.ekilishi
-                parvarishiInfo.text = productUzbEntity.parvarishi
-                ogitlashInfo.text = productUzbEntity.ogitlash
-                sugorishInfo.text = productUzbEntity.sugorish
-                qarshiKurashInfo.text = productUzbEntity.qarshi_kurash
+            list.forEach { productUzbEntity ->
+                binding.apply {
+                    productName.text = productUzbEntity.product_name
 
-                if (productUzbEntity.harorat == "0") {
-                    binding.haroratCard.gone()
-                } else {
-                    haroratInfo.text = productUzbEntity.harorat
+                    ekilishiInfo.text = productUzbEntity.ekilishi
+                    parvarishiInfo.text = productUzbEntity.parvarishi
+                    ogitlashInfo.text = productUzbEntity.ogitlash
+                    sugorishInfo.text = productUzbEntity.sugorish
+                    qarshiKurashInfo.text = productUzbEntity.qarshi_kurash
+
+                    if (productUzbEntity.harorat == "0") {
+                        binding.haroratCard.gone()
+                    } else {
+                        haroratInfo.text = productUzbEntity.harorat
+                    }
+
+                    if (productUzbEntity.davri == "0") {
+                        binding.davriCard.gone()
+                    } else {
+                        davriInfo.text = productUzbEntity.davri
+                    }
+
+
                 }
-
-                if (productUzbEntity.davri == "0") {
-                    binding.davriCard.gone()
-                } else {
-                    davriInfo.text = productUzbEntity.davri
-                }
-
-
             }
         }
+
+
 
 
         return binding.root

@@ -158,7 +158,7 @@ class HomeFragment : Fragment() {
                         }
                         7 -> {/*eslatma*/
                             binding.drawerLayout.closeDrawers()
-                            toast("Tez orada...")
+                            findNavController().navigate(R.id.bookFragment)
                         }
                         8 -> {/*ob havo*/
                             binding.drawerLayout.closeDrawers()
@@ -255,7 +255,7 @@ class HomeFragment : Fragment() {
         listNav.add(Nav(resources.getString(R.string.author), R.drawable.ic_users))
 
         listNav.add(Nav(resources.getString(R.string.save), R.drawable.ic_saved))
-        listNav.add(Nav(resources.getString(R.string.remember), R.drawable.ic_reminder))
+        listNav.add(Nav(resources.getString(R.string.remember), R.drawable.ic_e_book))
 
         listNav.add(Nav(resources.getString(R.string.weather), R.drawable.ic_weather_white))
         listNav.add(Nav(resources.getString(R.string.language), R.drawable.ic_language_white))

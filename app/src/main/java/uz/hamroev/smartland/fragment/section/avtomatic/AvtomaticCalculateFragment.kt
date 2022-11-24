@@ -48,11 +48,16 @@ class AvtomaticCalculateFragment : Fragment() {
             findNavController().popBackStack()
         }
 
+        Log.d(TAG, "onCreateView: double= ${round3By(120.547855)}")
+
         listCalculate = ArrayList()
 
         val listSelected = arguments?.getSerializable("select") as ArrayList<ProductEntity>
         for (product in listSelected) {
-            Log.d(TAG, "onCreateView: ${product.product_name} - ${product.product_percentage}\n Fasl = ${product.seasons}")
+            Log.d(
+                TAG,
+                "onCreateView: ${product.product_name} - ${product.product_percentage}\n Fasl = ${product.seasons}"
+            )
         }
 
         binding.calculateButton.setOnClickListener {
@@ -61,7 +66,7 @@ class AvtomaticCalculateFragment : Fragment() {
                 toast("Maydonni kiriting m2 ?")
             } else {
                 isCalculate = true
-                val sotix = binding.modelEditText.text.toString().trim().toFloat()
+                val sotix = binding.modelEditText.text.toString().trim().toDouble()
                 listCalculate = ArrayList()
                 listCalculate.clear()
                 checkProductSize(listSelected, sotix)
@@ -160,16 +165,16 @@ class AvtomaticCalculateFragment : Fragment() {
         return binding.root
     }
 
-    private fun checkProductSize(listSelected: ArrayList<ProductEntity>, sotix: Float) {
+    private fun checkProductSize(listSelected: ArrayList<ProductEntity>, sotix: Double) {
         when (listSelected.size) {
             1 -> {
                 Log.d(TAG, "checkProductSize: 1 ga kirdi")
-                var p1: Float = listSelected[0].product_percentage!!.toFloat()
+                var p1: Double = listSelected[0].product_percentage!!.toDouble()
                 listCalculate.clear()
                 listCalculate.add(
                     Selected(
                         listSelected[0].product_name,
-                        (sotix).toInt().toString()
+                        (sotix).toString()
                     )
                 )
                 selectedAdapter = SelectedAdapter(binding.root.context, listCalculate)
@@ -177,20 +182,20 @@ class AvtomaticCalculateFragment : Fragment() {
             }
             2 -> {
                 Log.d(TAG, "checkProductSize: 2 ga kirdi")
-                var p1: Float = listSelected[0].product_percentage!!.toFloat()
-                var p2: Float = listSelected[1].product_percentage!!.toFloat()
-                var x: Float = sotix / (p1 + p2)
+                var p1: Double = listSelected[0].product_percentage!!.toDouble()
+                var p2: Double = listSelected[1].product_percentage!!.toDouble()
+                var x: Double = sotix / (p1 + p2)
                 listCalculate.clear()
                 listCalculate.add(
                     Selected(
                         listSelected[0].product_name,
-                        (p1 * x).toInt().toString()
+                        round3By((p1 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[1].product_name,
-                        (p2 * x).toInt().toString()
+                        round3By((p2 * x))
                     )
                 )
                 selectedAdapter = SelectedAdapter(binding.root.context, listCalculate)
@@ -200,27 +205,27 @@ class AvtomaticCalculateFragment : Fragment() {
             }
             3 -> {
                 Log.d(TAG, "checkProductSize: 3 ga kirdi")
-                var p1: Float = listSelected[0].product_percentage!!.toFloat()
-                var p2: Float = listSelected[1].product_percentage!!.toFloat()
-                var p3: Float = listSelected[2].product_percentage!!.toFloat()
-                var x: Float = sotix / (p1 + p2 + p3)
+                var p1: Double = listSelected[0].product_percentage!!.toDouble()
+                var p2: Double = listSelected[1].product_percentage!!.toDouble()
+                var p3: Double = listSelected[2].product_percentage!!.toDouble()
+                var x: Double = sotix / (p1 + p2 + p3)
                 listCalculate.clear()
                 listCalculate.add(
                     Selected(
                         listSelected[0].product_name,
-                        (p1 * x).toInt().toString()
+                        round3By((p1 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[1].product_name,
-                        (p2 * x).toInt().toString()
+                        round3By((p2 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[2].product_name,
-                        (p3 * x).toInt().toString()
+                        round3By((p3 * x))
                     )
                 )
                 selectedAdapter = SelectedAdapter(binding.root.context, listCalculate)
@@ -228,34 +233,34 @@ class AvtomaticCalculateFragment : Fragment() {
             }
             4 -> {
                 Log.d(TAG, "checkProductSize: 4 ga kirdi")
-                var p1: Float = listSelected[0].product_percentage!!.toFloat()
-                var p2: Float = listSelected[1].product_percentage!!.toFloat()
-                var p3: Float = listSelected[2].product_percentage!!.toFloat()
-                var p4: Float = listSelected[3].product_percentage!!.toFloat()
-                var x: Float = sotix / (p1 + p2 + p3 + p4)
+                var p1: Double = listSelected[0].product_percentage!!.toDouble()
+                var p2: Double = listSelected[1].product_percentage!!.toDouble()
+                var p3: Double = listSelected[2].product_percentage!!.toDouble()
+                var p4: Double = listSelected[3].product_percentage!!.toDouble()
+                var x: Double = sotix / (p1 + p2 + p3 + p4)
                 listCalculate.clear()
                 listCalculate.add(
                     Selected(
                         listSelected[0].product_name,
-                        (p1 * x).toInt().toString()
+                        round3By((p1 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[1].product_name,
-                        (p2 * x).toInt().toString()
+                        round3By((p2 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[2].product_name,
-                        (p3 * x).toInt().toString()
+                        round3By((p3 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[3].product_name,
-                        (p4 * x).toInt().toString()
+                        round3By((p4 * x))
                     )
                 )
                 selectedAdapter = SelectedAdapter(binding.root.context, listCalculate)
@@ -263,41 +268,41 @@ class AvtomaticCalculateFragment : Fragment() {
             }
             5 -> {
                 Log.d(TAG, "checkProductSize: 5 ga kirdi")
-                var p1: Float = listSelected[0].product_percentage!!.toFloat()
-                var p2: Float = listSelected[1].product_percentage!!.toFloat()
-                var p3: Float = listSelected[2].product_percentage!!.toFloat()
-                var p4: Float = listSelected[3].product_percentage!!.toFloat()
-                var p5: Float = listSelected[4].product_percentage!!.toFloat()
-                var x: Float = sotix / (p1 + p2 + p3 + p4 + p5)
+                var p1: Double = listSelected[0].product_percentage!!.toDouble()
+                var p2: Double = listSelected[1].product_percentage!!.toDouble()
+                var p3: Double = listSelected[2].product_percentage!!.toDouble()
+                var p4: Double = listSelected[3].product_percentage!!.toDouble()
+                var p5: Double = listSelected[4].product_percentage!!.toDouble()
+                var x: Double = sotix / (p1 + p2 + p3 + p4 + p5)
                 listCalculate.clear()
                 listCalculate.add(
                     Selected(
                         listSelected[0].product_name,
-                        (p1 * x).toInt().toString()
+                        round3By((p1 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[1].product_name,
-                        (p2 * x).toInt().toString()
+                        round3By((p2 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[2].product_name,
-                        (p3 * x).toInt().toString()
+                        round3By((p3 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[3].product_name,
-                        (p4 * x).toInt().toString()
+                        round3By((p4 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[4].product_name,
-                        (p5 * x).toInt().toString()
+                        round3By((p5 * x))
                     )
                 )
                 selectedAdapter = SelectedAdapter(binding.root.context, listCalculate)
@@ -305,48 +310,48 @@ class AvtomaticCalculateFragment : Fragment() {
             }
             6 -> {
                 Log.d(TAG, "checkProductSize: 6 ga kirdi")
-                var p1: Float = listSelected[0].product_percentage!!.toFloat()
-                var p2: Float = listSelected[1].product_percentage!!.toFloat()
-                var p3: Float = listSelected[2].product_percentage!!.toFloat()
-                var p4: Float = listSelected[3].product_percentage!!.toFloat()
-                var p5: Float = listSelected[4].product_percentage!!.toFloat()
-                var p6: Float = listSelected[5].product_percentage!!.toFloat()
-                var x: Float = sotix / (p1 + p2 + p3 + p4 + p5 + p6)
+                var p1: Double = listSelected[0].product_percentage!!.toDouble()
+                var p2: Double = listSelected[1].product_percentage!!.toDouble()
+                var p3: Double = listSelected[2].product_percentage!!.toDouble()
+                var p4: Double = listSelected[3].product_percentage!!.toDouble()
+                var p5: Double = listSelected[4].product_percentage!!.toDouble()
+                var p6: Double = listSelected[5].product_percentage!!.toDouble()
+                var x: Double = sotix / (p1 + p2 + p3 + p4 + p5 + p6)
                 listCalculate.clear()
                 listCalculate.add(
                     Selected(
                         listSelected[0].product_name,
-                        (p1 * x).toInt().toString()
+                        round3By((p1 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[1].product_name,
-                        (p2 * x).toInt().toString()
+                        round3By((p2 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[2].product_name,
-                        (p3 * x).toInt().toString()
+                        round3By((p3 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[3].product_name,
-                        (p4 * x).toInt().toString()
+                        round3By((p4 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[4].product_name,
-                        (p5 * x).toInt().toString()
+                        round3By((p5 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[5].product_name,
-                        (p6 * x).toInt().toString()
+                        round3By((p6 * x))
                     )
                 )
                 selectedAdapter = SelectedAdapter(binding.root.context, listCalculate)
@@ -354,55 +359,55 @@ class AvtomaticCalculateFragment : Fragment() {
             }
             7 -> {
                 Log.d(TAG, "checkProductSize: 7 ga kirdi")
-                var p1: Float = listSelected[0].product_percentage!!.toFloat()
-                var p2: Float = listSelected[1].product_percentage!!.toFloat()
-                var p3: Float = listSelected[2].product_percentage!!.toFloat()
-                var p4: Float = listSelected[3].product_percentage!!.toFloat()
-                var p5: Float = listSelected[4].product_percentage!!.toFloat()
-                var p6: Float = listSelected[5].product_percentage!!.toFloat()
-                var p7: Float = listSelected[6].product_percentage!!.toFloat()
-                var x: Float = sotix / (p1 + p2 + p3 + p4 + p5 + p6 + p7)
+                var p1: Double = listSelected[0].product_percentage!!.toDouble()
+                var p2: Double = listSelected[1].product_percentage!!.toDouble()
+                var p3: Double = listSelected[2].product_percentage!!.toDouble()
+                var p4: Double = listSelected[3].product_percentage!!.toDouble()
+                var p5: Double = listSelected[4].product_percentage!!.toDouble()
+                var p6: Double = listSelected[5].product_percentage!!.toDouble()
+                var p7: Double = listSelected[6].product_percentage!!.toDouble()
+                var x: Double = sotix / (p1 + p2 + p3 + p4 + p5 + p6 + p7)
                 listCalculate.clear()
                 listCalculate.add(
                     Selected(
                         listSelected[0].product_name,
-                        (p1 * x).toInt().toString()
+                        round3By((p1 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[1].product_name,
-                        (p2 * x).toInt().toString()
+                        round3By((p2 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[2].product_name,
-                        (p3 * x).toInt().toString()
+                        round3By((p3 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[3].product_name,
-                        (p4 * x).toInt().toString()
+                        round3By((p4 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[4].product_name,
-                        (p5 * x).toInt().toString()
+                        round3By((p5 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[5].product_name,
-                        (p6 * x).toInt().toString()
+                        round3By((p6 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[6].product_name,
-                        (p7 * x).toInt().toString()
+                        round3By((p7 * x))
                     )
                 )
                 selectedAdapter = SelectedAdapter(binding.root.context, listCalculate)
@@ -410,62 +415,62 @@ class AvtomaticCalculateFragment : Fragment() {
             }
             8 -> {
                 Log.d(TAG, "checkProductSize: 8 ga kirdi")
-                var p1: Float = listSelected[0].product_percentage!!.toFloat()
-                var p2: Float = listSelected[1].product_percentage!!.toFloat()
-                var p3: Float = listSelected[2].product_percentage!!.toFloat()
-                var p4: Float = listSelected[3].product_percentage!!.toFloat()
-                var p5: Float = listSelected[4].product_percentage!!.toFloat()
-                var p6: Float = listSelected[5].product_percentage!!.toFloat()
-                var p7: Float = listSelected[6].product_percentage!!.toFloat()
-                var p8: Float = listSelected[7].product_percentage!!.toFloat()
-                var x: Float = sotix / (p1 + p2 + p3 + p4 + p5 + p6 + p7 + p8)
+                var p1: Double = listSelected[0].product_percentage!!.toDouble()
+                var p2: Double = listSelected[1].product_percentage!!.toDouble()
+                var p3: Double = listSelected[2].product_percentage!!.toDouble()
+                var p4: Double = listSelected[3].product_percentage!!.toDouble()
+                var p5: Double = listSelected[4].product_percentage!!.toDouble()
+                var p6: Double = listSelected[5].product_percentage!!.toDouble()
+                var p7: Double = listSelected[6].product_percentage!!.toDouble()
+                var p8: Double = listSelected[7].product_percentage!!.toDouble()
+                var x: Double = sotix / (p1 + p2 + p3 + p4 + p5 + p6 + p7 + p8)
                 listCalculate.clear()
                 listCalculate.add(
                     Selected(
                         listSelected[0].product_name,
-                        (p1 * x).toInt().toString()
+                        round3By((p1 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[1].product_name,
-                        (p2 * x).toInt().toString()
+                        round3By((p2 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[2].product_name,
-                        (p3 * x).toInt().toString()
+                        round3By((p3 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[3].product_name,
-                        (p4 * x).toInt().toString()
+                        round3By((p4 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[4].product_name,
-                        (p5 * x).toInt().toString()
+                        round3By((p5 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[5].product_name,
-                        (p6 * x).toInt().toString()
+                        round3By((p6 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[6].product_name,
-                        (p7 * x).toInt().toString()
+                        round3By((p7 * x))
                     )
                 )
                 listCalculate.add(
                     Selected(
                         listSelected[7].product_name,
-                        (p8 * x).toInt().toString()
+                        round3By((p8 * x))
                     )
                 )
                 selectedAdapter = SelectedAdapter(binding.root.context, listCalculate)
@@ -491,6 +496,21 @@ class AvtomaticCalculateFragment : Fragment() {
     private fun round1By(number: Float): Float {
         val format: Float = String.format("%.2f", number).toFloat()
         return format
+    }
+
+
+    private fun round2By(number: Double): Double {
+        val number3digits: Double = String.format("%.3f", number).toDouble()
+        val number2digits: Double = String.format("%.2f", number3digits).toDouble()
+        val solution: Double = String.format("%.1f", number2digits).toDouble()
+        return solution
+    }
+
+    private fun round3By(number: Double): String {
+        val number3digits:Double = Math.round(number * 1000.0) / 1000.0
+        val number2digits:Double = Math.round(number3digits * 100.0) / 100.0
+        val solution:Double = Math.round(number2digits * 10.0) / 10.0
+        return number2digits.toString()
     }
 
 

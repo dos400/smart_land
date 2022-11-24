@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Smart land</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="theme1">Автоматическое размещение культур</string>
+    <string name="theme1">Поместите овощи</string>
     <string name="theme2">Агротехника выращивания культур на приусадебном участке</string>
     <string name="theme3">Доходы и расходы</string>
     <string name="mualliflar">Авторы</string>
@@ -50,7 +50,7 @@
     <string name="exit">Выход</string>
     <string name="intro">Вступление</string>
     <string name="language">Язык</string>
-    <string name="remember">Напоминание</string>
+    <string name="remember">Книга</string>
 
     <!--    Weather-->
     <string name="max_temperature">Максимальная \nтемпература</string>
@@ -76,14 +76,15 @@
     <string name="save_btn">Сохранить</string>
 
 
-    <string name="acres">сколько м2</string>
-    <string name="sotix">сколько м2</string>
+    <string name="acres">сколько м<sup>2</sup></string>
+    <string name="sotix">сколько м<sup>2</sup></string>
 
     <string name="kiritilgan_maydon">Поле ввода</string>
 
     <string name="daromad">Доход</string>
     <string name="xarajat">Расходы</string>
     <string name="sof_foyda">Чистая прибыль</string>
+    <string name="m2">m<sup>2</sup></string>
 
 
 </resources>

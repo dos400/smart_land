@@ -108,7 +108,10 @@ class WeatherFragment : Fragment() {
         serviceApi.getWeatherByLonAndLot(latitude.toString(), longitude.toString())
             .enqueue(object : Callback<Weather> {
                 override fun onResponse(call: Call<Weather>, response: Response<Weather>) {
-                    val anim = AnimationUtils.loadAnimation(binding.root.context, R.anim.anim_weather_fragment)
+                    val anim = AnimationUtils.loadAnimation(
+                        binding.root.context,
+                        R.anim.anim_weather_fragment
+                    )
                     if (response.isSuccessful) {
                         binding.progressLinear.gone()
                         binding.main.visible()
@@ -165,6 +168,7 @@ class WeatherFragment : Fragment() {
         feels: Double
     ) {
 
+        Log.d(TAG, "setUI: ${weatherMain}")
         val temperature = temp.toInt().toString() + "°"
         val format = SimpleDateFormat("HH:mm").format(sunrise)
         val format1 = SimpleDateFormat("HH:mm").format(sunset)
@@ -194,8 +198,8 @@ class WeatherFragment : Fragment() {
                     }
                     "Clear" -> {
                         weatherName.text = resources.getString(R.string.clear)
-                        cloudIv.setImageResource(R.drawable.ic_sun)
-                        feelsLikeIv.setImageResource(R.drawable.ic_sun)
+                        cloudIv.setImageResource(R.drawable.ic_cloud)
+                        feelsLikeIv.setImageResource(R.drawable.ic_cloud)
                     }
                     "Rain" -> {
                         weatherName.text = resources.getString(R.string.rain)
@@ -216,12 +220,12 @@ class WeatherFragment : Fragment() {
                 subCity.text = name
 
                 temperatureTv.text = temperature
-
-                maxTemp.text = max_tempe
-                minTemp.text = min_tempe
-
-                sunriseTv.text = format
-                sunsetTv.text = format1
+//
+//                maxTemp.text = max_tempe
+//                minTemp.text = min_tempe
+//
+//                sunriseTv.text = format
+//                sunsetTv.text = format1
 
             }
         } catch (e: Exception) {

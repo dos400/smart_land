@@ -59,7 +59,7 @@
                 android:fontFamily="@font/albert_regular"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="m2"
+                android:text="@string/m2"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="normal" />
